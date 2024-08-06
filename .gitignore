@@ -1,0 +1,4 @@
+*.jar
+1_Linked_Lists/demo/.project
+1_Linked_Lists/.vscode/settings.json
+*/target/*

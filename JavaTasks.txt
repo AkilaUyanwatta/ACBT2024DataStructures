@@ -1,0 +1,9 @@
+Install VS code
+Install java extensions for VS code
+Installing java
+Create a new Java project
+Run java project
+Compile the project
+Run using the program using the JAR
+While loop
+Create a new class

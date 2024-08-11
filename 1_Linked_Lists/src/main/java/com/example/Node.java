@@ -137,7 +137,7 @@ public class Node {
         Node currentNode = this;
         while (currentNode != null) {
             if(previousNode == null){
-                previousNode = new Node(this.data);
+                previousNode = new Node(currentNode.data);
             }
             else{
                 nextNode = new Node(currentNode.data);

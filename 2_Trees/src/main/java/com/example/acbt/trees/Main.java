@@ -4,15 +4,35 @@ public class Main {
     public static void main(String[] args) {
         Tree students = getStudentsTree();
 
-        //Adding Sathsarani
+        // //Adding Sathsarani
+        // Tree sathsarani = new Tree("Sathsarani");
+        // Tree saranga = students.getLeftNode().getRightNode();
+        // saranga.setRightNode(sathsarani);
+
+        // //Removing Ravindu
+        // Tree lankani = students.getLeftNode();
+        // lankani.setLeftNode(null);
+
+        // System.out.println("");
+        System.out.println("*** In Order ***");
+        Tree.printInOrder(students);
+        System.out.println("");
+        
+        System.out.println("*** Pre Order ***");
+        Tree.printPreOrder(students);
+        System.out.println("");
+
+        System.out.println("*** Post Order ***");
+        Tree.printPostOrder(students);
+        System.out.println("");
+
+        //Adding Sathsarani to Ravindu's right node
         Tree sathsarani = new Tree("Sathsarani");
-        Tree saranga = students.getLeftNode().getRightNode();
-        saranga.setRightNode(sathsarani);
+        students.addNodeToRight("Saranga", sathsarani);
+        System.out.println("");
 
-        //Removing Ravindu
-        Tree lankani = students.getLeftNode();
-        lankani.setLeftNode(null);
-
+        //Adding the right child of Nilushana
+        students.removeRightChild("Nilushana");
         System.out.println("");
     }
 

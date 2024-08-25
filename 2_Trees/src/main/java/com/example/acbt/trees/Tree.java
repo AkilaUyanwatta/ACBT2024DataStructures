@@ -1,5 +1,8 @@
 package com.example.acbt.trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Tree {
     private String data = "";
     private Tree leftNode = null;
@@ -107,6 +110,23 @@ public class Tree {
             // Searching the right sub tree
             if (tree.getRightNode() != null) {
                 tree.getRightNode().removeRightChild(targetData);
+            }
+        }
+    }
+
+    public static void printLevelOrderTransversal(Tree tree){
+        Queue<Tree> transversingQueue = new LinkedList<>();
+        transversingQueue.add(tree);
+        while (transversingQueue.size() > 0) {
+            Tree currentNode = transversingQueue.poll();
+            System.out.println(currentNode.getData());
+            //Add the left child of the current node to the queue
+            if (currentNode.getLeftNode() != null) {
+                transversingQueue.add(currentNode.getLeftNode());
+            }
+            //Add the right child of the current node to the queue
+            if (currentNode.getRightNode() != null) {
+                transversingQueue.add(currentNode.getRightNode());
             }
         }
     }

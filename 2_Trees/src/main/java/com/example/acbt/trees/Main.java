@@ -14,26 +14,50 @@ public class Main {
         // lankani.setLeftNode(null);
 
         // System.out.println("");
-        System.out.println("*** In Order ***");
-        Tree.printInOrder(students);
-        System.out.println("");
+        // System.out.println("*** In Order ***");
+        // Tree.printInOrder(students);
+        // System.out.println("");
         
-        System.out.println("*** Pre Order ***");
-        Tree.printPreOrder(students);
-        System.out.println("");
+        // System.out.println("*** Pre Order ***");
+        // Tree.printPreOrder(students);
+        // System.out.println("");
 
-        System.out.println("*** Post Order ***");
-        Tree.printPostOrder(students);
-        System.out.println("");
+        // System.out.println("*** Post Order ***");
+        // Tree.printPostOrder(students);
+        // System.out.println("");
 
-        //Adding Sathsarani to Ravindu's right node
-        Tree sathsarani = new Tree("Sathsarani");
-        students.addNodeToRight("Saranga", sathsarani);
-        System.out.println("");
+        // //Adding Sathsarani to Ravindu's right node
+        // Tree sathsarani = new Tree("Sathsarani");
+        // students.addNodeToRight("Saranga", sathsarani);
+        // System.out.println("");
 
-        //Adding the right child of Nilushana
-        students.removeRightChild("Nilushana");
+        // //Adding the right child of Nilushana
+        // students.removeRightChild("Nilushana");
+        // System.out.println("");
+        // Tree.printLevelOrderTransversal(students);
+
+        //Binary Search Tree
+        //Creating a simple binary search tree using the getter
+        BinarySearchTree bst = getStartingBinarySearchTree();
+        bst.insert((float) 1.5);
         System.out.println("");
+    }
+
+    private static BinarySearchTree getStartingBinarySearchTree(){
+        
+        BinarySearchTree one = new BinarySearchTree((float) 1);
+        BinarySearchTree two = new BinarySearchTree((float) 2);
+        BinarySearchTree three = new BinarySearchTree((float) 3);
+        BinarySearchTree four = new BinarySearchTree((float) 4);
+        BinarySearchTree five = new BinarySearchTree((float) 5);
+
+        two.setLeftNode(one);
+        two.setRightNode(four);
+
+        four.setLeftNode(three);
+        four.setRightNode(five);
+
+        return two;
     }
 
     private static Tree getStudentsTree() {

@@ -39,7 +39,12 @@ public class Main {
         //Binary Search Tree
         //Creating a simple binary search tree using the getter
         BinarySearchTree bst = getStartingBinarySearchTree();
-        bst.insert((float) 1.5);
+        bst.insert((float) 1.2);
+        bst.insert((float) 3.5);
+        // Searching 3
+        bst.search((float) 3);
+        // Deleting 3
+        bst.delete((float) 3);
         System.out.println("");
     }
 

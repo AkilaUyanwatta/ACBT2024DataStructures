@@ -126,11 +126,15 @@ public class BinarySearchTree {
                         this.setLeftNode(childOfTheMatchingNode);
                     } else {
                         ArrayList<Float> inOrderList = getInOrderList(mathcingNode);
-                        System.out.println(inOrderList);
+                        int indexOfMatchingNode = inOrderList.indexOf(mathcingNode.getData());
+                        int indexOfPredecessor = indexOfMatchingNode - 1;
+                        float valueOfPredecessor = inOrderList.get(indexOfPredecessor);
+                        mathcingNode.delete(valueOfPredecessor);
+                        mathcingNode.setData(valueOfPredecessor);
                     }
 
                 } else {
-                    this.getLeftNode().search(searchingValue);
+                    this.getLeftNode().delete(searchingValue);
                 }
             } else {
                 System.out.println("The data is not in the graph");
@@ -149,10 +153,14 @@ public class BinarySearchTree {
                         this.setRightNode(childOfTheMatchingNode);
                     } else {
                         ArrayList<Float> inOrderList = getInOrderList(mathcingNode);
-                        System.out.println(inOrderList);
+                        int indexOfMatchingNode = inOrderList.indexOf(mathcingNode.getData());
+                        int indexOfPredecessor = indexOfMatchingNode - 1;
+                        float valueOfPredecessor = inOrderList.get(indexOfPredecessor);
+                        mathcingNode.delete(valueOfPredecessor);
+                        mathcingNode.setData(valueOfPredecessor);
                     }
                 } else{
-                    this.getRightNode().search(searchingValue);
+                    this.getRightNode().delete(searchingValue);
                 }
             } else {
                 System.out.println("The data is not in the graph");

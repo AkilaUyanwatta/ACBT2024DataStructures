@@ -38,13 +38,16 @@ public class Main {
 
         //Binary Search Tree
         //Creating a simple binary search tree using the getter
-        BinarySearchTree bst = getStartingBinarySearchTree();
-        bst.insert((float) 1.2);
-        bst.insert((float) 3.5);
-        // Searching 3
-        bst.search((float) 3);
-        // Deleting 3
-        bst.delete((float) 3);
+        // BinarySearchTree bst = getStartingBinarySearchTree();
+        // bst.insert((float) 1.2);
+        // bst.insert((float) 3.5);
+        // // Searching 3
+        // bst.search((float) 3);
+        // // Deleting 3
+        // bst.delete((float) 3);
+
+        BinarySearchTree complexTree = getComplexBinarySearchTree();
+        complexTree.delete((float) 40);
         System.out.println("");
     }
 
@@ -61,6 +64,30 @@ public class Main {
 
         four.setLeftNode(three);
         four.setRightNode(five);
+
+        return two;
+    }
+
+    private static BinarySearchTree getComplexBinarySearchTree(){
+        
+        BinarySearchTree one = new BinarySearchTree((float) 10);
+        BinarySearchTree two = new BinarySearchTree((float) 20);
+        BinarySearchTree three = new BinarySearchTree((float) 30);
+        BinarySearchTree four = new BinarySearchTree((float) 40);
+        BinarySearchTree five = new BinarySearchTree((float) 50);
+
+        two.setLeftNode(one);
+        two.setRightNode(four);
+
+        four.setLeftNode(three);
+        four.setRightNode(five);
+
+        three.setLeftNode(new BinarySearchTree((float)25));
+        three.setRightNode(new BinarySearchTree((float)35));
+        three.getRightNode().setLeftNode(new BinarySearchTree((float) 32));
+
+        five.setLeftNode(new BinarySearchTree((float) 45));
+        five.setRightNode(new BinarySearchTree((float) 55));
 
         return two;
     }

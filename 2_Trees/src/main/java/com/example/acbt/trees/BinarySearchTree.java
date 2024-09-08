@@ -1,5 +1,7 @@
 package com.example.acbt.trees;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree {
     Float data = null;
     BinarySearchTree leftNode = null;
@@ -26,6 +28,27 @@ public class BinarySearchTree {
     }
     public void setRightNode(BinarySearchTree rightNode) {
         this.rightNode = rightNode;
+    }
+
+    public static ArrayList<Float> getInOrderList(BinarySearchTree node){
+        //Create an empty list
+        ArrayList<Float> inOrderList = new ArrayList<>();
+
+        //Do the in order transversal
+
+        //Transversing the left subtree
+        if (node.getLeftNode() != null) {
+            inOrderList.addAll(getInOrderList(node.getLeftNode()));
+        }
+        //Visiting the node
+        inOrderList.add(node.getData());
+        //Transvwrsing the right subtree
+        if (node.getRightNode() != null) {
+            inOrderList.addAll(getInOrderList(node.getRightNode()));
+        }
+
+        //Return the result
+        return inOrderList;
     }
 
     //Will return true if the node is a leaf
@@ -101,7 +124,10 @@ public class BinarySearchTree {
                         //Setting the only child of the matching child as the child of the current root
                         BinarySearchTree childOfTheMatchingNode = getTheOnlyChild(mathcingNode);
                         this.setLeftNode(childOfTheMatchingNode);
-                    }// TODO : handle the rest
+                    } else {
+                        ArrayList<Float> inOrderList = getInOrderList(mathcingNode);
+                        System.out.println(inOrderList);
+                    }
 
                 } else {
                     this.getLeftNode().search(searchingValue);
@@ -121,7 +147,10 @@ public class BinarySearchTree {
                         //Setting the only child of the matching child as the child of the current root
                         BinarySearchTree childOfTheMatchingNode = getTheOnlyChild(mathcingNode);
                         this.setRightNode(childOfTheMatchingNode);
-                    }// TODO : handle the rest
+                    } else {
+                        ArrayList<Float> inOrderList = getInOrderList(mathcingNode);
+                        System.out.println(inOrderList);
+                    }
                 } else{
                     this.getRightNode().search(searchingValue);
                 }
